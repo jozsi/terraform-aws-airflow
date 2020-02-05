@@ -17,6 +17,11 @@ output "webserver_public_ip" {
   description = "Public IP address for the Airflow Webserver instance"
   value       = [aws_instance.airflow_webserver.*.public_ip]
 }
+  
+output "webserver_instance" {
+  description = "The Airflow Webserver instance"
+  value       = aws_instance.airflow_webserver[0]
+}
 
 output "database_endpoint" {
   description = "Endpoint to connect to RDS metadata DB"
